@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        for (int num : nums1) {
+            arr.add(num);
+        }
+
+        ArrayList<Integer> result = new ArrayList<>();
+
+        for (int num : nums2) {
+            if (arr.contains(num)) {
+                result.add(num);
+                arr.remove(Integer.valueOf(num)); 
+
+            }
+        }
+           int[] intersection = new int[result.size()];
+        for (int i = 0; i < result.size(); i++) {
+            intersection[i] = result.get(i);
+        }
+
+        return intersection;
+        
+    }
+        }
+
+       
