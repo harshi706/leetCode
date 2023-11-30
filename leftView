@@ -1,0 +1,20 @@
+class Tree{
+    ArrayList<Integer>help(Node root,ArrayList<Integer>l,int level){
+        if(root==null){
+            return l;
+        }
+        if(level==l.size()){
+            l.add(root.data);
+        }
+            help(root.left,l,level+1);
+            help(root.right,l,level+1);
+        
+        return l;
+        
+    }
+    ArrayList<Integer> leftView(Node root){
+        ArrayList<Integer>res=new ArrayList<>();
+        help(root,res,0);
+        return res;
+      // Your code here
+    }
