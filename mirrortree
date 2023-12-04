@@ -1,0 +1,26 @@
+
+class Solution {
+    void inorder(Node node){
+        if(node==null){
+            return;
+        }
+        inorder(node.left);
+        System.out.println(node.data);
+        inorder(node.right);
+    }
+    // Function to convert a binary tree into its mirror tree.
+    void mirror(Node node) {
+        Node temp;
+        // Your code here
+        if(node==null){
+            return;
+        }
+                temp=node.left;
+                node.left=node.right;
+                node.right=temp;
+                
+                mirror(node.left);
+                mirror(node.right);
+             //   inorder(node);
+    }
+}
